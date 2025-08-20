@@ -1,0 +1,21 @@
+# Logs
+*.log
+
+# IDEs
+.idea/
+.vscode/
+
+# Node
+node_modules/
+
+# Java
+target/
+*.class
+
+# Python
+__pycache__/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
