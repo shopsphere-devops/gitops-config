@@ -1,0 +1,18 @@
+# Requests a TLS certificate for a specific domain (e.g., argocd.hellosaanvika.com).
+# cert-manager will use the ClusterIssuer to get the certificate and store it in a Kubernetes Secret.
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-tls
+  namespace: argocd
+spec:
+  secretName: argocd-tls  # Where the TLS cert will be stored.
+  issuerRef:  # Which issuer to use (the ClusterIssuer).
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: argocd.hellosaanvika.com  # The domain(s) you want a cert for.
+  dnsNames:
+    - argocd.hellosaanvika.com
+
+# cert-manager will create a Secret named argocd-tls in the argocd namespace containing the TLS cert and key.
