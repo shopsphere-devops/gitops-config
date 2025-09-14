@@ -1,5 +1,5 @@
 database:
-  host: shopsphere-db.xxxxxxx.us-east-1.rds.amazonaws.com  # From Terraform output
+  host: "null" # From Terraform output
   port: 5432
   name: shopsphere
-  credentialsSecret: shopsphere-db-secret  # The secret created by ESO
+  credentialsSecret: shopsphere-db-secret # The secret created by ESO
