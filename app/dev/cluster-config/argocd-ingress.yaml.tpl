@@ -11,13 +11,9 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
-    # Remove certificate-arn annotation if using cert-manager
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    alb.ingress.kubernetes.io/certificate-arn: ${ACM_CERT_ARN}
+
 spec:
-  tls:  # Specifies which hosts need TLS and which Secret to use.
-  - hosts:
-    - argocd.hellosaanvika.com
-    secretName: argocd-tls
   rules:  #  Maps the domain to your Argo CD service.
   - host: argocd.hellosaanvika.com
     http:

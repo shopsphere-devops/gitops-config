@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flyway-migrations
+  namespace: catalog
+data:
+  V1__init.sql: |
+    CREATE TABLE users (
+      id SERIAL PRIMARY KEY,
+      username VARCHAR(255) NOT NULL
+    );
+  V2__add_table.sql: |
+    ALTER TABLE users ADD COLUMN email VARCHAR(255);

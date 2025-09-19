@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Repository
+metadata:
+  name: my-github-repo
+  namespace: argocd
+spec:
+  type: git
+  url: https://github.com/<org>/<repo>.git
+  githubAppPrivateKeySecret:
+    name: github-app-creds
+    key: privateKey
+  githubAppIDSecret:
+    name: github-app-creds
+    key: appID
+  githubAppInstallationIDSecret:
+    name: github-app-creds
+    key: installationID
