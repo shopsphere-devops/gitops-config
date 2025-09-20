@@ -15,7 +15,7 @@ metadata:
 
 spec:
   rules:  #  Maps the domain to your Argo CD service.
-  - host: argocd.hellosaanvika.com
+  - host: argocd-dev.hellosaanvika.com
     http:
       paths:
       - path: /
@@ -25,5 +25,3 @@ spec:
             name: argocd-server
             port:
               number: 80
-
-# This will create an ALB that listens on 80/443, uses the TLS cert from argocd-tls, and routes traffic to your Argo CD service.
