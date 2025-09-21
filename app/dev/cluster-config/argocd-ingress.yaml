@@ -11,11 +11,11 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/dbb39fb1-543d-4e88-a643-3c09b8a35f22
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/e6f44dd0-0374-41b3-9bf7-ee21ec43815f
 
 spec:
   rules:  #  Maps the domain to your Argo CD service.
-  - host: argocd.hellosaanvika.com
+  - host: argocd-dev.hellosaanvika.com
     http:
       paths:
       - path: /
@@ -25,5 +25,3 @@ spec:
             name: argocd-server
             port:
               number: 80
-
-# This will create an ALB that listens on 80/443, uses the TLS cert from argocd-tls, and routes traffic to your Argo CD service.
