@@ -12,6 +12,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
     alb.ingress.kubernetes.io/certificate-arn: ${ACM_CERT_ARN}
+    external-dns.alpha.kubernetes.io/hostname: argocd-dev.hellosaanvika.com
 
 spec:
   rules:  #  Maps the domain to your Argo CD service.
