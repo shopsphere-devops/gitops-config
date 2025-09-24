@@ -11,7 +11,8 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/b362a8ec-e851-40e4-b1aa-0b80614e8e36
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/e35219a7-2718-4157-a479-7eb4e50e113f
+    external-dns.alpha.kubernetes.io/hostname: argocd-dev.hellosaanvika.com
 
 spec:
   rules:  #  Maps the domain to your Argo CD service.
