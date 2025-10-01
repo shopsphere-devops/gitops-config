@@ -11,7 +11,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/fde9b10d-a791-46b0-9d68-dfc0ea5aaae4
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:246412345195:certificate/a28c9160-bc3d-4305-8235-e0a811c1e705
     external-dns.alpha.kubernetes.io/hostname: argocd-dev.hellosaanvika.com
 
 spec:
