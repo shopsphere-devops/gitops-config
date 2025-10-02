@@ -4,7 +4,7 @@ metadata:
   name: user
   namespace: argocd
 spec:
-  project: shopsphere-devops
+  project: default
   source:
     repoURL: 'https://github.com/shopsphere-devops/helm-charts.git'
     targetRevision: main
