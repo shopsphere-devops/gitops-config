@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: catalog
+  namespace: argocd
+spec:
+  project: shopsphere-devops
+  source:
+    repoURL: 'https://github.com/shopsphere-devops/helm-charts.git'
+    targetRevision: main
+    path: charts/catalog
+    helm:
+      valueFiles:
+        - values-dev.yaml   # dev-specific overrides
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: catalog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

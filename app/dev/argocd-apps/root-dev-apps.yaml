@@ -1,20 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-apps
+  name: shopsphere-apps-dev
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/shopsphere-devops/gitops-config.git
+    repoURL: 'https://github.com/shopsphere-devops/gitops-config.git'
     targetRevision: main
-    path: app/dev/apps
+    path: app/dev/apps    # points to folder containing child Applications
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
